@@ -5,6 +5,17 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <!-- Register the product listing route decorator -->
+        <service id="VlRemoveItemFromCategory\Core\Content\Product\SalesChannel\Listing\ProductListingRouteDecorator" decorates="Shopware\Core\Content\Product\SalesChannel\Listing\ProductListingRoute">
+            <argument type="service" id="VlRemoveItemFromCategory\Core\Content\Product\SalesChannel\Listing\ProductListingRouteDecorator.inner"/>
+            <tag name="shopware.sales_channel.product.listing_route_decorator"/>
+        </service>
 
+        <!-- Register the product category subscriber -->
+        <service id="VlRemoveItemFromCategory\Subscriber\ProductCategorySubscriber">
+            <argument type="service" id="product.repository"/>
+            <argument type="service" id="product_category.repository"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
     </services>
 </container>
