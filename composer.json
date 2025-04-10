@@ -1,0 +1,27 @@
+{
+    "name": "vl-remove-item-from-category/vl-remove-item-from-category",
+    "description": "vl-remove-item-from-category/vl-remove-item-from-category",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "VlRemoveItemFromCategory\\VlRemoveItemFromCategory",
+        "label": {
+            "de-DE": "Entfernen der Produkte aus einer Kategorie",
+            "en-GB": "Remove products from category"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "VlRemoveItemFromCategory\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VlRemoveItemFromCategory\\Tests\\": "tests/"
+        }
+    }
+}
